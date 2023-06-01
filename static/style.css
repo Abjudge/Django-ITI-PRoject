@@ -47,7 +47,7 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
-button{
+.button{
 	width: 60%;
 	height: 40px;
 	margin: 10px auto;
@@ -64,7 +64,7 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
+.button:hover{
 	background: #6d44b8;
 }
 .login{
@@ -83,7 +83,7 @@ button:hover{
 	transform: translateY(-500px);
 }
 #chk:checked ~ .login label{
-	transform: scale(1);	
+	transform: scale(1);
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);

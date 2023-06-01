@@ -1,0 +1,13 @@
+ {%extends 'dash.html' %}
+{%block tit%}
+List User
+{%endblock%}
+{%block content%}
+{% for u in users%}
+ {{u.id}}
+ {{u.password}}
+ {%endfor%}
+{%endblock%}
+{%block header%}
+List User
+{%endblock%}

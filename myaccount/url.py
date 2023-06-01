@@ -7,4 +7,6 @@ urlpatterns = [
     path("", Login, name="Login"),
     path("Reg/", reg, name="reg"),
     path("Logout/", Logout, name="logout"),
+    path("List/", userlist, name="userlist"),
+
 ]

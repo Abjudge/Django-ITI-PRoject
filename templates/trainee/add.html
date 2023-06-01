@@ -1,0 +1,21 @@
+{%extends 'dash.html' %}
+{%block tit%}
+Trainee add
+{%endblock%}
+
+{%block header%}
+Trainee ADD
+{%endblock%}
+
+{%block content%}
+<form method="post">
+    {%csrf_token%}
+    <input type="text" name="traineename">
+    </br>
+    <input type="number" name="coursename">
+    </br>
+    <input type="submit" value="add">
+
+
+</form>
+{%endblock%}
