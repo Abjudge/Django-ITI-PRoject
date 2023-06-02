@@ -25,10 +25,17 @@ def traineeadd(request):
     else:
         return HttpResponseRedirect('/')
 
-def traineeupdate(request,id):
+def traineeupdate(request,ID):
 
+    context={}
+    context['courses']=Course.objects.all()
+    context['trainee'] = Traineee.objects.get(id=ID)
     if ('username' in request.session):
-        return HttpResponse("Trainee " + str(id) + "updated")
+        if (request.method=="POST"):
+            Traineee.objects.filter(id=ID).update(name=request.POST['traineename'],courseid=Course.objects.get(id=request.POST['coursename']) )
+            return  HttpResponseRedirect("/Trainee")
+
+        return render(request,'trainee/update.html',context)
     else:
         return HttpResponseRedirect('/')
 

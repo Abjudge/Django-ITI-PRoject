@@ -1,0 +1,30 @@
+{%extends 'dash.html' %}
+{%block tit%}
+Trainee add
+{%endblock%}
+
+{%block header%}
+Trainee Update
+{%endblock%}
+
+{%block content%}
+<form method="post">
+    {%csrf_token%}
+    <input type="text" name="traineename" value="{{trainee.name}}">
+    </br>
+    <select name="coursename">
+    {%for course in courses%}
+        <option value="{{course.id}}"
+        {% if course.id == trainee.courseid.name%}
+                selected
+                {%endif%}
+        >{{course.name}}</option>
+        {%endfor%}
+    </select>
+
+    </br>
+    <input type="submit" value="Update">
+
+
+</form>
+{%endblock%}
