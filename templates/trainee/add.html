@@ -12,7 +12,12 @@ Trainee ADD
     {%csrf_token%}
     <input type="text" name="traineename">
     </br>
-    <input type="number" name="coursename">
+    <select name="coursename">
+    {%for course in courses%}
+        <option value="{{course.id}}">{{course.name}}</option>
+        {%endfor%}
+    </select>
+
     </br>
     <input type="submit" value="add">
 

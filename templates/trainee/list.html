@@ -3,7 +3,26 @@
 Trainee LIST
 {%endblock%}
 {%block content%}
-TRainee list
+<table >
+  <tr >
+    <th>Trainee id</th>
+    <th>Trainee Name</th>
+    <th>Course ID</th>
+    <th> Actions</th>
+  </tr>
+{%for trainee in trainees%}
+  <tr>
+    <td>{{trainee.id}}</td>
+    <td>{{trainee.name}}</td>
+    <td>{{trainee.courseid.name}}</td>
+    <td>
+        <a href="{%url 'traineedelete' trainee.id%}"> Delete</a>
+      <a href="{%url 'traineeupdate' trainee.id%}"> Update</a>
+
+    </td>
+  </tr>
+  {%endfor%}
+</table>
 {%endblock%}
 {%block header%}
 trainee list
