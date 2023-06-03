@@ -28,7 +28,7 @@
 				<form method="post">
 					{%csrf_token%}
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="lgemail" placeholder="Email" required="">
+					<input type="text" name="lgemail" placeholder="Email" required="">
 					<input type="password" name="lgpassword" placeholder="Password" required="">
 					<div color="red"> {{msg}}</div>
 					<button>Login</button>

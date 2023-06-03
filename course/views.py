@@ -4,12 +4,12 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 # Create your views here.
-def courselist(request):
-    if( 'username' in request.session):
+from django.views import View
+class courselist(View):
+    def get(self,request):
         return render(request, 'home.html')
-    else:
-        return HttpResponseRedirect('/')
-
+    def post(self,request):
+        pass
 def courseadd(request):
 
     if ( 'username' in request.session):
